@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-const FormAddSubs = ({ setType, setPrice, type, price }) => {
-      setError(true);
-
+const FormAddSubs = ({ setType, setPrice, type, price, setSubs, subs }) => {
     const [error, setError] = useState(false);
 
     const handleSubs = (e) => {    
@@ -13,23 +11,29 @@ const FormAddSubs = ({ setType, setPrice, type, price }) => {
             return;
         }
         setError(false);
-        console.log(type);
-        console.log(price);
-    };
 
+        const data = {
+            type: type,
+            price: price,
+            id: Date.now()
+        };
+        setSubs([...(subs || []), data]);
+        setType("");
+        setPrice("");
+    };
 
     return (
         <div className="add subscripcion">
             <h2>Agregar Subcripciones</h2>
             <form onSubmit={handleSubs}>
-                <p>Servicios</p>    
+                <p>Servicios</p>
                 <select onChange={e => setType(e.target.value)} value={type}>
                     <option value=""> -- elegir -- </option>
                     <option value="netflix">Netflix</option>
                     <option value="disney">Disney</option>
                     <option value="amazon">Amazon</option>
                     <option value="spotify">Spotify</option>
-                </select>        
+                </select>
                 <p>Cantidad</p>
                 <input
                     type="number"
@@ -38,8 +42,8 @@ const FormAddSubs = ({ setType, setPrice, type, price }) => {
                     value={price}
                 />
                 <input type="submit" value="Agregar" />
-                {error && <p style={{color: "red"}}>Completa todos los campos correctamente.</p>}
             </form>
+            {error && <p className="error">Campos inválidos</p>}
         </div>
     );
 };

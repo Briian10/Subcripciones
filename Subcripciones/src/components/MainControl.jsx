@@ -5,6 +5,7 @@ import FormAddSubs from "./FormAddSubs";
 const MainControl = ({ count }) => {
     const [type, setType] = useState("");
     const [price, setPrice] = useState("");
+    const [subs, setSubs] = useState([]); // <-- corregido
 
     return (
         <div className="main-form">
@@ -14,6 +15,8 @@ const MainControl = ({ count }) => {
                 setPrice={setPrice}
                 type={type}
                 price={price}
+                setSubs={setSubs}
+                subs={subs}
             />
         </div>
     );
