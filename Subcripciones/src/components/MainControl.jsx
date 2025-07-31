@@ -9,7 +9,8 @@ const MainControl = ({ count }) => {
     const [subs, setSubs] = useState([
       { id: 1, type: "netflix", price: 120 },
       { id: 2, type: "spotify", price: 80 },
-      { id: 3, type: "disney", price: 100 }
+      { id: 3, type: "disney", price: 100 },
+     { id: 4, type: "hbomax", price: 100 }
     ]);
 
     return (
@@ -31,3 +32,4 @@ const MainControl = ({ count }) => {
 };
 
 export default MainControl;
+

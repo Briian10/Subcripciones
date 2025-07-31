@@ -31,7 +31,7 @@ const FormAddSubs = ({ setType, setPrice, type, price, setSubs, subs }) => {
                     <option value=""> -- elegir -- </option>
                     <option value="netflix">Netflix</option>
                     <option value="disney">Disney</option>
-                    <option value="hbo max">HBO Max</option>
+                    <option value="hbomax">HBO Max</option>
                     <option value="spotify">Spotify</option>
                 </select>
                 <p>Cantidad</p>

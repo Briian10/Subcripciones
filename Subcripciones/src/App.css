@@ -1,7 +1,12 @@
+.spotify-logo {
+  width: 160px !important;
+  max-height: 110px !important;
+  object-fit: contain;
+}
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
-
 body{
   font-family: 'Lato', sans-serif;
+/* llave eliminada para corregir error de sintaxis */
   /* background-color: #D9F5FF; */
   
   /* background-repeat: no-repeat; */
@@ -96,10 +101,14 @@ p.error {
 .add-subscription input[type="number"] {
   font-size: inherit;
   padding: 8px 9px;
-  width: 177px;
-  border: 0px;
-  outline: none;
-  border-radius: 4px;
+  width: 155px;
+  max-width: 100%;
+  max-height: 80px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 .add-subscription input[type="submit"] {
   display: block;
@@ -147,14 +156,6 @@ p.error {
 .single-item img{
   width: 155px;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.single-item img:hover {
-  transform: scale(1.06) rotate(-2deg);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
 p.author {
